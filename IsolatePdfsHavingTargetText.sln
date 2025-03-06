@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsolatePdfsHavingTargetText", "IsolatePdfsHavingTargetText\IsolatePdfsHavingTargetText.csproj", "{67CC0DC7-B979-432B-A3A9-34EBA99F94F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4A589923-1705-4F13-AFA6-82BD0D3F638E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsolatePdfsHavingTargetText.Tests", "IsolatePdfsHavingTargetText.Tests\IsolatePdfsHavingTargetText.Tests.csproj", "{AA89B180-293E-432E-B654-09ED94102864}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67CC0DC7-B979-432B-A3A9-34EBA99F94F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CC0DC7-B979-432B-A3A9-34EBA99F94F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CC0DC7-B979-432B-A3A9-34EBA99F94F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CC0DC7-B979-432B-A3A9-34EBA99F94F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA89B180-293E-432E-B654-09ED94102864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA89B180-293E-432E-B654-09ED94102864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA89B180-293E-432E-B654-09ED94102864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA89B180-293E-432E-B654-09ED94102864}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
