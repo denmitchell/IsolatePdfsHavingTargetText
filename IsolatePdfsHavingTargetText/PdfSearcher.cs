@@ -52,7 +52,7 @@ namespace IsolatePdfsHavingTargetText
                     foundFiles.Add(fileName);
                 }
 
-                if (i % batchSize == 0)
+                if (i == fileCount - 1 || (i > 0 && i % batchSize == 0))
                     Console.WriteLine($"Processed {i} files.");
             }
 
@@ -65,23 +65,27 @@ namespace IsolatePdfsHavingTargetText
 
         public static bool SearchTextInPdf(string pdfFilePath, string[] searchTextArray)
         {
-            // Initialize the PDF reader
-            using PdfReader pdfReader = new(pdfFilePath);
-            using PdfDocument pdfDocument = new(pdfReader);
-
-            // Iterate through pages and search for the text
-            int numberOfPages = pdfDocument.GetNumberOfPages();
-            for (int i = 1; i <= numberOfPages; i++)
+            try
             {
-                string pageText = PdfTextExtractor.GetTextFromPage(pdfDocument.GetPage(i));
-                foreach (string searchText in searchTextArray)
+                // Initialize the PDF reader
+                using PdfReader pdfReader = new(pdfFilePath);
+                using PdfDocument pdfDocument = new(pdfReader);
+
+                // Iterate through pages and search for the text
+                int numberOfPages = pdfDocument.GetNumberOfPages();
+                for (int i = 1; i <= numberOfPages; i++)
                 {
-                    if (pageText.Contains(searchText, StringComparison.OrdinalIgnoreCase)) // Case-insensitive search
+                    string pageText = PdfTextExtractor.GetTextFromPage(pdfDocument.GetPage(i));
+                    foreach (string searchText in searchTextArray)
                     {
-                        return true;
+                        if (pageText.Contains(searchText, StringComparison.OrdinalIgnoreCase)) // Case-insensitive search
+                        {
+                            return true;
+                        }
                     }
                 }
             }
+            catch { } //iText throws exceptions for things like missing PDF headers.  Ignore these exceptions.
             return false;
         }
 
